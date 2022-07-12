@@ -7,8 +7,7 @@ module('Acceptance | a normal test', function(hooks) {
 
   test('visiting /a-normal-test', async function(assert) {
     await visit('/');
-    await find('.did-load');
 
-    assert.equal(currentURL(), '/');
+    assert.ok(find('.did-load'));
   });
 });

@@ -1,9 +1,9 @@
-import Controller from '@ember/controller';
+import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { registerWaiter, unregisterWaiter } from '@ember/test';
 
-export default class ApplicationController extends Controller {
+export default class MapComponentComponent extends Component {
   constructor(...args) {
     super(...args);
 
@@ -37,7 +37,7 @@ export default class ApplicationController extends Controller {
     this.mapDidLoad = true;
   }
 
-  willDestroy() {
+  willDestroyElement() {
     unregisterWaiter(this.checkMap)
   }
 }

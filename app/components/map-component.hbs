@@ -1,0 +1,14 @@
+<MapboxGl @class='map-container' @initOptions={{this.initOptions}} @mapLoaded={{this.mapLoaded}} as |map|>
+  <map.source @options={{hash type='geojson' data=this.marker}} as |source|>
+    <source.layer @layer={{hash
+      type='circle'
+      paint=(hash circle-color='#007cbf' circle-radius=10)}}>
+    </source.layer>
+  </map.source>
+</MapboxGl>
+
+{{#if this.mapDidLoad}}
+  <div class="did-load">
+    Loaded!
+  </div>
+{{/if}}
